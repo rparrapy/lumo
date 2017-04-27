@@ -56,7 +56,7 @@ const JestIndex = React.createClass({
           </Container>
           <div
             className="productShowcaseSection paddingBottom"
-            style={{textAlign: 'center'}}
+            style={{ textAlign: 'center' }}
           >
             <h2>{siteConfig[language].featureCallout.title}</h2>
             <Marked>

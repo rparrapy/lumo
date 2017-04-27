@@ -9,68 +9,6 @@ const React = require('React');
 
 const siteConfig = require('../../siteConfig.js');
 
-class LanguageDropDown extends React.Component {
-  render() {
-    const enabledLanguages = [];
-    let currentLanguage = 'English';
-
-    siteConfig['languages'].map(lang => {
-      if (lang.tag == this.props.language) {
-        currentLanguage = lang.name;
-      }
-      enabledLanguages.push(
-        <li key={lang.tag}>
-          <a href={'/jest/' + lang.tag}>
-            {lang.name}
-          </a>
-        </li>
-      );
-    });
-
-    enabledLanguages.push(
-      <li key="recruiting">
-        <a href="https://crowdin.com/project/jest" target="_blank">
-          Help Translate
-        </a>
-      </li>
-    );
-
-    return (
-      <span>
-        <li>
-          <a id="languages-menu" href="#">
-            <img
-              className="languages-icon"
-              src={this.props.baseUrl + 'img/language.svg'}
-            />
-            {currentLanguage}
-          </a>
-          <div id="languages-dropdown" className="hide">
-            <ul id="languages-dropdown-items">
-              {enabledLanguages}
-            </ul>
-          </div>
-        </li>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-        const languagesMenuItem = document.getElementById("languages-menu");
-        const languagesDropDown = document.getElementById("languages-dropdown");
-        languagesMenuItem.addEventListener("click", function(){
-          if(languagesDropDown.className == "hide") { 
-            languagesDropDown.className = "visible";
-          } else {
-            languagesDropDown.className = "hide";
-          }
-        });
-      `,
-          }}
-        />
-      </span>
-    );
-  }
-}
-
 class HeaderNav extends React.Component {
   constructor() {
     super();
@@ -80,6 +18,7 @@ class HeaderNav extends React.Component {
   }
 
   makeLinks(link) {
+    // prettier-ignore
     link.href = link.href.replace(
       /\/LANGUAGE\//,
       '\/' + this.props.language + '\/'
@@ -117,10 +56,6 @@ class HeaderNav extends React.Component {
       <div className="navigationWrapper navigationSlider">
         <nav className="slidingNav">
           <ul className="nav-site nav-site-internal">
-            <LanguageDropDown
-              baseUrl={this.props.baseUrl}
-              language={this.props.language}
-            />
             {this.props.linksInternal.map(this.makeLinks, this)}
             <li className="navSearchWrapper reactNavSearchWrapper">
               <input id="search_input_react" type="text" placeholder="Search" />
@@ -140,9 +75,9 @@ HeaderNav.defaultProps = {
       href: '/jest/docs/LANGUAGE/getting-started.html',
       text: 'Docs',
     },
-    {section: 'api', href: '/jest/docs/LANGUAGE/api.html', text: 'API'},
-    {section: 'help', href: '/jest/LANGUAGE/help.html', text: 'Help'},
-    {section: 'blog', href: '/jest/blog/', text: 'Blog'},
+    { section: 'api', href: '/jest/docs/LANGUAGE/api.html', text: 'API' },
+    { section: 'help', href: '/jest/LANGUAGE/help.html', text: 'Help' },
+    { section: 'blog', href: '/jest/blog/', text: 'Blog' },
   ],
   linksExternal: [
     {

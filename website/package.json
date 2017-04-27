@@ -2,14 +2,11 @@
   "scripts": {
     "start": "node server/server.js",
     "test": "node server/generate.js",
-    "gh-pages": "node publish-gh-pages.js",
-    "crowdin-upload": "crowdin-cli --config ../crowdin.yaml upload sources --auto-update -b master",
-    "crowdin-download": "crowdin-cli --config ../crowdin.yaml download -b master"
+    "gh-pages": "node publish-gh-pages.js"
   },
   "dependencies": {
     "classnames": "2.2.4",
     "connect": "2.8.3",
-    "crowdin-cli": "^0.3.0",
     "feed": "0.3.0",
     "fs.extra": "*",
     "glob": "*",

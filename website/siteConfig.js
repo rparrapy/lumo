@@ -5,12 +5,12 @@ const React = require('React');
 const githubButton = (
   <a
     className="github-button"
-    href="https://github.com/facebook/jest"
+    href="https://github.com/anmonteiro/lumo"
     data-icon="octicon-star"
-    data-count-href="/facebook/jest/stargazers"
-    data-count-api="/repos/facebook/jest#stargazers_count"
+    data-count-href="/anmonteiro/lumo/stargazers"
+    data-count-api="/repos/anmonteiro/lumo#stargazers_count"
     data-count-aria-label="# stargazers on GitHub"
-    aria-label="Star facebook/jest on GitHub"
+    aria-label="Star anmonteiro/lumo on GitHub"
   >
     Star
   </a>
@@ -249,22 +249,13 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Jest',
-  url: 'https://facebook.github.io',
-  baseUrl: '/jest/',
-  repo: 'facebook/jest',
+  title: 'Lumo',
+  url: 'https://anmonteiro.github.io',
+  baseUrl: '/lumo/',
+  repo: 'anmonteiro/lumo',
   githubButton,
   users,
 };
-
-// load, parse, and filter only selected languages
-const languages = require('./languages.js');
-
-const enabledLanguages = [];
-languages.filter(lang => lang.enabled).map(lang => {
-  enabledLanguages.push(lang);
-});
-siteConfig['languages'] = enabledLanguages;
 
 siteConfig['en'] = require('./i18n/en.js');
 
