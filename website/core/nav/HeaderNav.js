@@ -7,8 +7,6 @@
 
 const React = require('React');
 
-const siteConfig = require('../../siteConfig.js');
-
 class HeaderNav extends React.Component {
   constructor() {
     super();
@@ -18,18 +16,12 @@ class HeaderNav extends React.Component {
   }
 
   makeLinks(link) {
-    // prettier-ignore
-    link.href = link.href.replace(
-      /\/LANGUAGE\//,
-      '\/' + this.props.language + '\/'
-    );
     return (
       <li key={link.section}>
         <a
           href={link.href}
-          className={link.section === this.props.section ? 'active' : ''}
-        >
-          {siteConfig[this.props.language]['localized-strings'][link.text]}
+          className={link.section === this.props.section ? 'active' : ''}>
+          {link.text}
         </a>
       </li>
     );
@@ -70,21 +62,13 @@ class HeaderNav extends React.Component {
 
 HeaderNav.defaultProps = {
   linksInternal: [
-    {
-      section: 'docs',
-      href: '/jest/docs/LANGUAGE/getting-started.html',
-      text: 'Docs',
-    },
-    { section: 'api', href: '/jest/docs/LANGUAGE/api.html', text: 'API' },
-    { section: 'help', href: '/jest/LANGUAGE/help.html', text: 'Help' },
-    { section: 'blog', href: '/jest/blog/', text: 'Blog' },
+    {section: 'docs', href: '/jest/docs/getting-started.html', text: 'Docs'},
+    {section: 'api', href: '/jest/docs/api.html', text: 'API'},
+    {section: 'help', href: '/jest/help.html', text: 'Help'},
+    {section: 'blog', href: '/jest/blog/', text: 'Blog'},
   ],
   linksExternal: [
-    {
-      section: 'github',
-      href: 'https://github.com/facebook/jest',
-      text: 'GitHub',
-    },
+    {section: 'github', href: 'https://github.com/facebook/jest', text: 'GitHub'},
   ],
 };
 

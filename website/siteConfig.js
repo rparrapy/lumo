@@ -1,22 +1,21 @@
 /* eslint-disable sort-keys, max-len */
 
+const Button = require('Button');
 const React = require('React');
 
 const githubButton = (
   <a
     className="github-button"
-    href="https://github.com/anmonteiro/lumo"
+    href="https://github.com/facebook/jest"
     data-icon="octicon-star"
-    data-count-href="/anmonteiro/lumo/stargazers"
-    data-count-api="/repos/anmonteiro/lumo#stargazers_count"
+    data-count-href="/facebook/jest/stargazers"
+    data-show-count="true"
     data-count-aria-label="# stargazers on GitHub"
-    aria-label="Star anmonteiro/lumo on GitHub"
+    aria-label="Star facebook/jest on GitHub"
   >
     Star
   </a>
 );
-
-console.log('siteConfig loaded...');
 
 /*
 Many companies use Jest, so we can't list all of them in our showcase.
@@ -250,13 +249,39 @@ const users = [
 
 const siteConfig = {
   title: 'Lumo',
-  url: 'https://anmonteiro.github.io',
-  baseUrl: '/lumo/',
-  repo: 'anmonteiro/lumo',
+  tagline: '🃏 Painless JavaScript Testing',
+  description: 'Jest is a JavaScript testing framework, used by Facebook to test all JavaScript code including React applications.',
+  url: 'https://facebook.github.io',
+  baseUrl: '/jest/',
+  repo: 'facebook/jest',
   githubButton,
+  homepagePromos: [
+    <div className="pluginRowBlock">
+      <Button href="#use">Try out Jest</Button>
+      <Button href="/jest/docs/getting-started.html">Get Started</Button>
+      <Button href="/jest/docs/snapshot-testing.html">Learn More</Button>
+    </div>,
+  ],
+  features: [
+    {
+      image: '/jest/img/content/female-technologist.png',
+      imageAlign: 'top',
+      title: 'Easy Setup',
+      content: 'Complete and easy to set-up JavaScript testing solution. Works out of the box for any React project.',
+    },
+    {
+      image: '/jest/img/content/runner.png',
+      imageAlign: 'top',
+      title: 'Instant Feedback',
+      content: 'Fast interactive watch mode runs only test files related to changed files and is optimized to give signal quickly.',
+    },
+    {
+      image: '/jest/img/content/camera-with-flash.png',
+      imageAlign: 'top',
+      title: 'Snapshot Testing',
+      content: 'Capture snapshots of React trees or other serializable values to simplify UI testing and to analyze how state changes over time.',
+    },
+  ],
   users,
 };
-
-siteConfig['en'] = require('./i18n/en.js');
-
 module.exports = siteConfig;

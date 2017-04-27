@@ -9,8 +9,6 @@ const optimist = require('optimist');
 const path = require('path');
 const reactMiddleware = require('react-page-middleware');
 
-console.log('server.js triggered...');
-
 const argv = optimist.argv;
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
@@ -45,21 +43,14 @@ const app = connect()
     next();
   })
   .use('/jest/blog/feed.xml', (req, res) => {
-    // prettier-ignore
-    res.end(
-      fs.readFileSync(path.join(FILE_SERVE_ROOT, 'jest/blog/feed.xml')) + ''
-    );
+    res.end(fs.readFileSync(path.join(FILE_SERVE_ROOT, 'jest/blog/feed.xml')) + '');
   })
   .use('/jest/blog/atom.xml', (req, res) => {
-    // prettier-ignore
-    res.end(
-      fs.readFileSync(path.join(FILE_SERVE_ROOT, 'jest/blog/atom.xml')) + ''
-    );
-    console.log('DONE');
+    res.end(fs.readFileSync(path.join(FILE_SERVE_ROOT, 'jest/blog/atom.xml')) + '');
   })
   .use(reactMiddleware.provide(buildOptions))
   .use(connect['static'](FILE_SERVE_ROOT))
-  // .use(connect.favicon(path.join(FILE_SERVE_ROOT, 'elements', 'favicon', 'favicon.ico')))
+  .use(connect.favicon(path.join(FILE_SERVE_ROOT, 'elements', 'favicon', 'favicon.ico')))
   .use(connect.logger())
   .use(connect.compress())
   .use(connect.errorHandler());
