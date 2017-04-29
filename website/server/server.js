@@ -35,6 +35,7 @@ const buildOptions = {
   static: true,
 };
 
+// prettier-ignore
 const app = connect()
   .use((req, res, next) => {
     // convert all the md files on every request. This is not optimal
@@ -42,15 +43,24 @@ const app = connect()
     convert();
     next();
   })
-  .use('/jest/blog/feed.xml', (req, res) => {
-    res.end(fs.readFileSync(path.join(FILE_SERVE_ROOT, 'jest/blog/feed.xml')) + '');
+  .use('/blog/feed.xml', (req, res) => {
+    // prettier-ignore
+    res.end(
+      fs.readFileSync(path.join(FILE_SERVE_ROOT, 'blog/feed.xml')) + ''
+    );
   })
-  .use('/jest/blog/atom.xml', (req, res) => {
-    res.end(fs.readFileSync(path.join(FILE_SERVE_ROOT, 'jest/blog/atom.xml')) + '');
+  .use('/blog/atom.xml', (req, res) => {
+    res.end(
+      fs.readFileSync(path.join(FILE_SERVE_ROOT, 'blog/atom.xml')) + ''
+    );
   })
   .use(reactMiddleware.provide(buildOptions))
   .use(connect['static'](FILE_SERVE_ROOT))
-  .use(connect.favicon(path.join(FILE_SERVE_ROOT, 'elements', 'favicon', 'favicon.ico')))
+  .use(
+    connect.favicon(
+      path.join(FILE_SERVE_ROOT, 'elements', 'favicon', 'favicon.ico')
+    )
+  )
   .use(connect.logger())
   .use(connect.compress())
   .use(connect.errorHandler());
@@ -58,5 +68,5 @@ const app = connect()
 const portToUse = port || 8080;
 const server = http.createServer(app);
 server.listen(portToUse);
-console.log('Open http://localhost:' + portToUse + '/jest/index.html');
+console.log('Open http://localhost:' + portToUse + '/index.html');
 module.exports = server;
