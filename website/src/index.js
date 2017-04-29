@@ -31,7 +31,7 @@ const index = React.createClass({
 
     return (
       <Site>
-        <HomeSplash mostRecentPost={blog.files[0]} />
+        <HomeSplash />
         <div className="mainContainer">
           <Container padding={['bottom', 'top']}>
             <GridBlock
@@ -40,16 +40,6 @@ const index = React.createClass({
               layout="fourColumn"
             />
           </Container>
-          <div
-            className="productShowcaseSection paddingBottom"
-            style={{ textAlign: 'center' }}
-          >
-            <h2>Zero configuration testing platform</h2>
-            <Marked>
-              Jest is used by Facebook to test all JavaScript code including React applications. One of Jest's philosophies is to provide an integrated “zero-configuration” experience. We observed that when engineers are provided with ready-to-use tools, they end up writing more tests, which in turn results in more stable and healthy code bases.
-            </Marked>
-          </div>
-
           <Container padding={['bottom', 'top']} background="light">
             <GridBlock
               contents={[

@@ -264,19 +264,19 @@ const siteConfig = {
   ],
   features: [
     {
-      image: '/img/content/female-technologist.png',
+      image: '/img/content/terminal.png',
       imageAlign: 'top',
       title: 'Easy Setup',
-      content: 'Complete and easy to set-up JavaScript testing solution. Works out of the box for any React project.',
+      content: 'Download or install a single binary that works out of the box.',
     },
     {
-      image: '/img/content/runner.png',
+      image: '/img/content/nodejslogo.png',
       imageAlign: 'top',
       title: 'Instant Feedback',
       content: 'Fast interactive watch mode runs only test files related to changed files and is optimized to give signal quickly.',
     },
     {
-      image: '/img/content/camera-with-flash.png',
+      image: '/img/content/cljslogo.svg',
       imageAlign: 'top',
       title: 'Snapshot Testing',
       content: 'Capture snapshots of React trees or other serializable values to simplify UI testing and to analyze how state changes over time.',

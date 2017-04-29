@@ -22,7 +22,7 @@ class HomeSplash extends React.Component {
         <div className="homeSplashFade">
           <div className="wrapper homeWrapper">
             <div className="projectLogo">
-              <img src="/jest/img/jest-outline.svg" alt="Jest" />
+              <img src="/img/jest-outline.svg" alt="Jest" />
             </div>
             <div className="inner">
               <h2 className="projectTitle">

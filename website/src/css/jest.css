@@ -782,6 +782,9 @@ a:hover code {
 .blockImage {
   max-width: 730px;
 }
+.blockImage > img {
+  max-height: 80px;
+}
 .imageAlignSide .blockImage {
   max-width: 500px;
   flex: 0 1 500px;
@@ -804,7 +807,7 @@ a:hover code {
   margin-right: auto;
 }
 .imageAlignTop .blockImage {
-  max-width: 80px;
+  /* max-width: 80px; */
   margin-bottom: 20px;
 }
 .imageAlignTop.alignCenter .blockImage {
