@@ -1,10 +1,6 @@
-/**
- * @jsx React.DOM
- */
-
 /* eslint-disable max-len */
 
-const React = require('React');
+import React from 'React';
 const Site = require('../components/Site');
 const Marked = require('../components/Marked');
 
@@ -121,4 +117,5 @@ const index = React.createClass({
     );
   },
 });
-module.exports = index;
+
+export default index;

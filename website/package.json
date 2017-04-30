@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "start": "node server/server.js",
-    "test": "node server/generate.js",
-    "gh-pages": "node publish-gh-pages.js"
+    "lol": "babel",
+    "start": "babel-node server/server.js",
+    "test": "babel-node server/generate.js",
+    "gh-pages": "babel-node publish-gh-pages.js"
   },
   "dependencies": {
     "classnames": "2.2.4",
@@ -13,12 +14,15 @@
     "mkdirp": "*",
     "object-assign": "^2.0.0",
     "optimist": "0.6.0",
-    "prettier": "^1.2.2",
+    "prettier": "github:prettier/prettier#master",
     "react": "0.13.2",
     "react-page-middleware": "git://github.com/facebook/react-page-middleware.git",
     "request": "*"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-dynamic-import-node": "^1.0.1",
+    "babel-preset-env": "2.0.0-alpha7",
     "shelljs": "^0.7.5"
   }
 }

@@ -8,6 +8,7 @@ const http = require('http');
 const optimist = require('optimist');
 const path = require('path');
 const reactMiddleware = require('react-page-middleware');
+import reactSSRMiddleware from './react-ssr-middleware';
 
 const argv = optimist.argv;
 
@@ -54,7 +55,8 @@ const app = connect()
       fs.readFileSync(path.join(FILE_SERVE_ROOT, 'blog/atom.xml')) + ''
     );
   })
-  .use(reactMiddleware.provide(buildOptions))
+  .use(reactSSRMiddleware)
+  // .use(reactMiddleware.provide(buildOptions))
   .use(connect['static'](FILE_SERVE_ROOT))
   .use(
     connect.favicon(
