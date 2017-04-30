@@ -5,15 +5,15 @@
 /* eslint-disable max-len */
 
 const React = require('React');
-const Site = require('Site');
-const Marked = require('Marked');
+const Site = require('../components/Site');
+const Marked = require('../components/Marked');
 
-const Container = require('Container');
-const HomeSplash = require('HomeSplash');
-const GridBlock = require('GridBlock');
+const Container = require('../components/Container');
+const HomeSplash = require('../components/home/HomeSplash');
+const GridBlock = require('../components/home/GridBlock');
 
 const siteConfig = require('../siteConfig.js');
-const blog = require('MetadataBlog');
+const blog = require('../components/metadata-blog');
 
 const index = React.createClass({
   render() {
@@ -77,26 +77,6 @@ const index = React.createClass({
             />
           </Container>
 
-          <Container background="dark" padding={['bottom', 'top']}>
-            <a className="anchor" name="use" />
-            <a className="hash-link" href="#use" />
-            <div className="blockElement imageAlignSide twoByGridBlock">
-              <div className="blockContent">
-                <h2>
-                  Try it out!
-                </h2>
-                <div>
-                  <Marked>
-                    You can try out a real version of Jest using [repl.it](https://repl.it/languages). Consider a function, `add()`, that adds two numbers. We can use a basic test in `add-test.js` to verify that 1 + 2 equals 3. Hit "run" to try it out!
-                  </Marked>
-                </div>
-              </div>
-              <div className="jest-repl">
-                <iframe src="https://repl.it/languages?lite=true" />
-              </div>
-            </div>
-          </Container>
-
           <Container padding={['bottom', 'top']}>
             <GridBlock
               contents={[
@@ -120,22 +100,6 @@ const index = React.createClass({
                 },
               ]}
             />
-          </Container>
-
-          <Container padding={['bottom', 'top']}>
-            <div className="blockElement imageAlignSide twoByGridBlock">
-              <div className="video">
-                <iframe src="https://fast.wistia.net/embed/iframe/78j73pyz17" />
-              </div>
-              <div className="blockContent">
-                <h2>Learn how to test JavaScript with Jest</h2>
-                <div>
-                  <Marked>
-                    In this [video](https://egghead.io/lessons/javascript-test-javascript-with-jest) by [Kent C. Dodds](https://twitter.com/kentcdodds) you will learn how to install Jest and write your first unit test.
-                  </Marked>
-                </div>
-              </div>
-            </div>
           </Container>
 
           <div className="productShowcaseSection paddingBottom">

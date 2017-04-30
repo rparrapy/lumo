@@ -1,6 +1,6 @@
 /* eslint-disable sort-keys, max-len */
 
-const Button = require('Button');
+const Button = require('./components/Button');
 const React = require('React');
 
 const githubButton = (
@@ -264,22 +264,22 @@ const siteConfig = {
   ],
   features: [
     {
-      image: '/img/content/terminal.png',
+      image: '/img/content/rocket.png',
       imageAlign: 'top',
-      title: 'Easy Setup',
-      content: 'Download or install a single binary that works out of the box.',
+      title: 'Instant startup',
+      content: 'Lumo starts up instantly, giving you access to a full-featured ClojureScript environment in less than 200 milliseconds.',
+    },
+    {
+      image: '/img/content/cljslogo.svg',
+      imageAlign: 'top',
+      title: 'Clojure(Script)',
+      content: 'Harness the full power of ClojureScript in a self-contained, cross-platform environment with no setup necessary.',
     },
     {
       image: '/img/content/nodejslogo.png',
       imageAlign: 'top',
       title: 'Instant Feedback',
-      content: 'Fast interactive watch mode runs only test files related to changed files and is optimized to give signal quickly.',
-    },
-    {
-      image: '/img/content/cljslogo.svg',
-      imageAlign: 'top',
-      title: 'Snapshot Testing',
-      content: 'Capture snapshots of React trees or other serializable values to simplify UI testing and to analyze how state changes over time.',
+      content: 'All the power of Node.js and seamless integration with more than 450 thousand NPM packages in a single binary.',
     },
   ],
   users,

@@ -1,8 +1,3 @@
-/**
- * @providesModule HomeSplash
- * @jsx React.DOM
- */
-
 const React = require('React');
 
 const siteConfig = require('../../siteConfig.js');

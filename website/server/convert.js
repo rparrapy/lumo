@@ -8,7 +8,7 @@ const glob = require('glob');
 const mkdirp = require('mkdirp');
 const optimist = require('optimist');
 const path = require('path');
-const toSlug = require('../core/toSlug');
+const toSlug = require('../components/toSlug');
 
 const argv = optimist.argv;
 
@@ -182,7 +182,7 @@ function execute() {
 
     // prettier-ignore
     fs.writeFileSync(
-      'core/metadata.js',
+      'components/metadata.js',
       '/**\n' +
         ' * @generated\n' +
         ' * @providesModule Metadata\n' +
