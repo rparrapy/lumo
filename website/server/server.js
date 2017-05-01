@@ -7,7 +7,6 @@ const fs = require('fs');
 const http = require('http');
 const optimist = require('optimist');
 const path = require('path');
-const reactMiddleware = require('react-page-middleware');
 import reactSSRMiddleware from './react-ssr-middleware';
 
 const argv = optimist.argv;
@@ -36,7 +35,6 @@ const buildOptions = {
   static: true,
 };
 
-// prettier-ignore
 const app = connect()
   .use((req, res, next) => {
     // convert all the md files on every request. This is not optimal
@@ -45,23 +43,17 @@ const app = connect()
     next();
   })
   .use('/blog/feed.xml', (req, res) => {
-    // prettier-ignore
-    res.end(
-      fs.readFileSync(path.join(FILE_SERVE_ROOT, 'blog/feed.xml')) + ''
-    );
+    res.end(fs.readFileSync(path.join(FILE_SERVE_ROOT, 'blog/feed.xml')) + '');
   })
   .use('/blog/atom.xml', (req, res) => {
-    res.end(
-      fs.readFileSync(path.join(FILE_SERVE_ROOT, 'blog/atom.xml')) + ''
-    );
+    res.end(fs.readFileSync(path.join(FILE_SERVE_ROOT, 'blog/atom.xml')) + '');
   })
   .use(reactSSRMiddleware)
-  // .use(reactMiddleware.provide(buildOptions))
   .use(connect['static'](FILE_SERVE_ROOT))
   .use(
     connect.favicon(
-      path.join(FILE_SERVE_ROOT, 'elements', 'favicon', 'favicon.ico')
-    )
+      path.join(FILE_SERVE_ROOT, 'elements', 'favicon', 'favicon.ico'),
+    ),
   )
   .use(connect.logger())
   .use(connect.compress())

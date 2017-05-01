@@ -1,11 +1,7 @@
-/**
- * @providesModule HeaderNav
- * @jsx React.DOM
- */
-
 /* eslint-disable sort-keys */
 
 const React = require('React');
+console.log('LAL REQUIRING HEADER NAV');
 
 class HeaderNav extends React.Component {
   constructor() {
@@ -20,7 +16,8 @@ class HeaderNav extends React.Component {
       <li key={link.section}>
         <a
           href={link.href}
-          className={link.section === this.props.section ? 'active' : ''}>
+          className={link.section === this.props.section ? 'active' : ''}
+        >
           {link.text}
         </a>
       </li>
@@ -32,6 +29,10 @@ class HeaderNav extends React.Component {
       <div className="fixedHeaderContainer">
         <div className="headerWrapper wrapper">
           <header>
+            <a href={this.props.baseUrl}>
+              MASE O CARALHO
+            </a>
+
             <a href={this.props.baseUrl}>
               <img src={this.props.baseUrl + 'img/jest-outline.svg'} />
               <h2>{this.props.title}</h2>
@@ -62,13 +63,17 @@ class HeaderNav extends React.Component {
 
 HeaderNav.defaultProps = {
   linksInternal: [
-    {section: 'docs', href: '/jest/docs/getting-started.html', text: 'Docs'},
-    {section: 'api', href: '/jest/docs/api.html', text: 'API'},
-    {section: 'help', href: '/jest/help.html', text: 'Help'},
-    {section: 'blog', href: '/jest/blog/', text: 'Blog'},
+    { section: 'docs', href: '/docs/getting-started.html', text: 'Docs' },
+    { section: 'api', href: '/docs/api.html', text: 'API' },
+    { section: 'help', href: '/help.html', text: 'Help' },
+    { section: 'blog', href: '/blog/', text: 'Blog' },
   ],
   linksExternal: [
-    {section: 'github', href: 'https://github.com/facebook/jest', text: 'GitHub'},
+    {
+      section: 'github',
+      href: 'https://github.com/anmonteiro/lumo',
+      text: 'GitHub',
+    },
   ],
 };
 

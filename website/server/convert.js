@@ -126,12 +126,11 @@ function execute() {
   const DOCS_MD_DIR = '../docs/';
   const BLOG_MD_DIR = '../blog/';
 
-  globEach('src/jest/docs/*.*', rmFile);
+  globEach('src/docs/*.*', rmFile);
   // globEach('src/jest/blog/*.*', rmFile);
 
-  // prettier-ignore
   const gettingStarted = splitHeader(
-    fs.readFileSync(DOCS_MD_DIR + 'GettingStarted.md', 'utf8')
+    fs.readFileSync(DOCS_MD_DIR + 'GettingStarted.md', 'utf8'),
   ).content.replace(/\(\/jest\//g, '(https://facebook.github.io/jest/');
 
   let readme = fs.readFileSync('../README.md', 'utf8');
@@ -167,10 +166,9 @@ function execute() {
           metadata.layout.substr(1) +
           'Layout';
 
-        // prettier-ignore
         writeFileAndCreateFolder(
-          'src/jest/' + metadata.permalink.replace(/\.html$/, '.js'),
-          buildFile(layout, metadata, rawContent)
+          'src/' + metadata.permalink.replace(/\.html$/, '.js'),
+          buildFile(layout, metadata, rawContent),
         );
       }
 
@@ -180,7 +178,6 @@ function execute() {
       }
     });
 
-    // prettier-ignore
     fs.writeFileSync(
       'components/metadata.js',
       '/**\n' +
@@ -189,7 +186,7 @@ function execute() {
         ' */\n' +
         'module.exports = ' +
         JSON.stringify(metadatas, null, 2) +
-        ';'
+        ';',
     );
   });
 }

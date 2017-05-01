@@ -1,8 +1,3 @@
-/**
- * @providesModule Head
- * @jsx React.DOM
- */
-
 const React = require('React');
 
 const Head = React.createClass({

@@ -1,12 +1,7 @@
-/**
- * @providesModule Header
- * @jsx React.DOM
- */
-
 /* eslint-disable sort-keys */
 
 const React = require('React');
-const toSlug = require('toSlug');
+const toSlug = require('./toSlug');
 
 const Header = React.createClass({
   render() {
@@ -15,7 +10,7 @@ const Header = React.createClass({
 
     return (
       <Heading {...this.props}>
-        <a className="anchor" name={slug}></a>
+        <a className="anchor" name={slug} />
         {this.props.children}
         {' '}<a className="hash-link" href={'#' + slug}>#</a>
       </Heading>

@@ -10,8 +10,8 @@ const GridBlock = require('../components/home/GridBlock');
 
 const siteConfig = require('../siteConfig.js');
 const blog = require('../components/metadata-blog');
-
-const index = React.createClass({
+console.log('LOADING INDEX');
+export default React.createClass({
   render() {
     const showcase = siteConfig.users
       .filter(user => {
@@ -117,5 +117,3 @@ const index = React.createClass({
     );
   },
 });
-
-export default index;
